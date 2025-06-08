@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>bbbb</title>
+    </head>
+    <body style="background: rgb(247, 233, 236)">
+        <p>hello bbb</p>
+        <input type="text" id="my-input" value="adscdv" />
+        <button onclick="hello()">click me</button>
+        <script>
+            function hello(){
+                document.getElementById('my-input').value = 'hello!!!'
+            }
+        </script>
+
+        <hr>
+
+        <p>a:<input type="text" id="input-a" /></p>
+        <p>b:<input type="text" id="input-b" /></p>
+        <p>
+            <button onclick="add()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="mul()">*</button>
+            <button onclick="div()">÷</button>
+        </p>
+        output:<input type="text" id="output"  />
+        <script>
+            function add(){
+                var a = document.getElementById("input-a").value;
+                var b = document.getElementById("input-b").value;
+                var r = parseInt(a) + parseInt(b)
+                document.getElementById("output").value= r
+            }
+            function sub(){
+                var a = document.getElementById("input-a").value;
+                var b = document.getElementById("input-b").value;
+                var r = parseInt(a) - parseInt(b)
+                document.getElementById("output").value= r
+            }
+            function mul(){
+                var a = document.getElementById("input-a").value;
+                var b = document.getElementById("input-b").value;
+                var r = parseInt(a) * parseInt(b)
+                document.getElementById("output").value= r
+            }
+            function div(){
+                var a = document.getElementById("input-a").value;
+                var b = document.getElementById("input-b").value;
+                var r = parseInt(a) / parseInt(b)
+                document.getElementById("output").value= r
+            }
+
+        </script>
+
+        <hr>
+        <h2>Fruits Stock</h2>
+
+        <input type="text" id="num-a" value="10" disabled/>
+        <input type="text" id="num-b" value="7" disabled/>
+        <input type="text" id="num-o" value="3" disabled/>
+        <p> 
+            <div style="display: flex; gap: 120px;">
+            <button id = "buttapples" button onclick="A()">apple</button><button id = "buttbananas" button onclick="B()">Banana</button><button id = "buttoranges" button onclick="O()">Orange</button>
+            </div>
+        </p>
+        <p>cart : <textarea id="cart" rows="4" cols="50"></textarea> </p>
+        <script>
+            function A(){
+                var numOfApples = document.getElementById("num-a").value
+                if ( numOfApples > 0){
+                    document.getElementById("cart").value = document.getElementById("cart").value + ',apple'
+                    document.getElementById("num-a").value = document.getElementById("num-a").value - 1
+                }
+                var numAppleAfter = document.getElementById("num-a").value
+                if ( numAppleAfter == 0){
+                     document.getElementById("buttapples").disabled = true
+                }
+            }
+        
+            function B(){
+                var numOfBananas = document.getElementById("num-b").value
+                if ( numOfBananas > 0){
+                    document.getElementById("cart").value = document.getElementById("cart").value + ',banana'
+                    document.getElementById("num-b").value = document.getElementById("num-b").value - 1
+                }
+                var numBananaAfter = document.getElementById("num-b").value
+                if ( numBananaAfter == 0){
+                     document.getElementById("buttbananas").disabled = true
+                }
+            }
+            function O(){
+                var numOfOranges = document.getElementById("num-o").value
+                if ( numOfOranges > 0){
+                    document.getElementById("cart").value = document.getElementById("cart").value + ',orange'
+                    document.getElementById("num-o").value = document.getElementById("num-o").value - 1
+                }
+                var numOrangeAfter = document.getElementById("num-o").value
+                if ( numOrangeAfter == 0){
+                     document.getElementById("buttoranges").disabled = true
+                }
+            }
+        </script>
+
+     </body>
+</html>
+
